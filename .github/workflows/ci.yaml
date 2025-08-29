@@ -34,7 +34,9 @@ jobs:
           tags: |
             ghcr.io/igorbdl/gha-arc-runner:latest
           build-args: |
-            RUNNER_VERSION=igorbdl-v0.1
+            RUNNER_VERSION=2.328.0
+            TARGETOS=linux
+            TARGETARCH=amd64
           push: true
           labels: |
             org.opencontainers.image.source=${{github.server_url}}/${{github.repository}}

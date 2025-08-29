@@ -24,16 +24,6 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Release package
-        run: |
-          docker buildx build $ARGS \
-            --build-arg CONTEXT_PATH="containers/$container" \
-            --platform linux/amd64,linux/arm64 \
-            --tag ghcr.io/denoland/${container}:${tag} \
-            --tag ghcr.io/denoland/${container}:latest \
-            --push \
-            ./containers/$container
-
       - name: Build and push Docker image
         id: build-and-push
         uses: docker/build-push-action@v6

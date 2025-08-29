@@ -66,4 +66,7 @@ RUN install -o root -g root -m 755 docker/* /usr/bin/ && rm -rf docker
 
 RUN chown -R 1001 /usr/local/bin
 
+# workaround
+RUN ln -s /home/runner/_work /home/runner/work
+
 USER runner
